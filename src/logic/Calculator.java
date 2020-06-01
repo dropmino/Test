@@ -60,6 +60,185 @@ public class Calculator extends Application{
 		
 	}
 	
+	public void setOperation() {
+		buttons[10].setOnAction(new EventHandler<ActionEvent>() {
+					
+					public void handle(ActionEvent event){
+							operation = 0;
+							a = (float) (a + c/Math.pow(10, counter));
+							i=1;
+							punto=0;
+							counter = 0;
+							event.getSource();
+					}
+				});
+				
+				buttons[11].setOnAction(new EventHandler<ActionEvent>() {
+					
+					public void handle(ActionEvent event){
+							operation = 1;
+							a = (float) (a + c/Math.pow(10, counter));
+							i=1;
+							punto=0;
+							counter = 0;
+							event.getSource();
+					}
+				});
+				
+				buttons[12].setOnAction(new EventHandler<ActionEvent>() {
+					
+					public void handle(ActionEvent event){
+							operation = 2;
+							a = (float) (a + c/Math.pow(10, counter));
+							i=1;
+							punto = 0;
+							counter = 0;
+							event.getSource();
+					}
+				});
+				
+				buttons[13].setOnAction(new EventHandler<ActionEvent>() {
+					
+					public void handle(ActionEvent event){
+							operation = 3;
+							a = (float) (a + c/Math.pow(10, counter));
+							i=1;
+							punto=0;
+							counter = 0;
+							event.getSource();
+					}
+				});
+				
+				buttons[14].setOnAction(new EventHandler<ActionEvent>() {
+					
+					public void handle(ActionEvent event){
+						b = (float) (b + d/Math.pow(10, counter));
+							if(operation == 0) {
+								res = a+b;
+								result.setText("" + res);
+								
+							}else if(operation == 1) {
+								res = a-b;
+								result.setText("" + res);
+								
+							}else if(operation == 2) {
+								res = a*b;
+								result.setText("" + res);
+								
+							}else if(operation == 3) {
+								res = a/b;
+								result.setText("" + res);
+							}
+						a=0;
+						i=0;
+						b=0;
+						c=0;
+						d=0;
+						res=0;
+						punto= 0 ;
+						counter = 0;
+						event.getSource();
+					}
+				});
+				
+				buttons[15].setOnAction(new EventHandler<ActionEvent>() {
+					
+					public void handle(ActionEvent event){
+							
+							punto = 1 ; 
+							
+							if(i == 0) 	result.setText("" + (int)a + ".");
+			
+							else if(i == 1) 	result.setText("" + (int)b + ".");
+							event.getSource();
+					}
+				});
+				
+				buttons[16].setOnAction(new EventHandler<ActionEvent>() {
+					
+					public void handle(ActionEvent event){
+							a = (float) (a + c/Math.pow(10, counter));
+							res = (float) Math.pow(a, 0.5);
+							result.setText("" + res);
+							a=0;
+							i=0;
+							b=0;
+							c=0;
+							d=0;
+							res=0;
+							punto= 0 ;
+							counter = 0;
+							event.getSource();
+					}
+				});
+				
+				
+			
+				
+				buttons[17].setOnAction(new EventHandler<ActionEvent>() {
+					
+					public void handle(ActionEvent event){
+							a = (float) (a + c/Math.pow(10, counter));
+							res = (float) Math.pow(a, 2);
+							result.setText("" + res);
+							a=0;
+							i=0;
+							b=0;
+							c=0;
+							d=0;
+							res=0;
+							punto= 0 ;
+							counter = 0;
+							event.getSource();
+					}
+				});
+				
+				buttons[18].setOnAction(new EventHandler<ActionEvent>() {
+					
+					public void handle(ActionEvent event){
+						if(i == 0) 	{
+							a=-a;
+							result.setText("" + a);
+						}else {
+							b=-b;
+							result.setText("" + b);
+						}
+						event.getSource();	
+					}
+				});
+				
+				buttons[19].setOnAction(new EventHandler<ActionEvent>() {
+					
+					public void handle(ActionEvent event){
+						String s;
+						if(i == 0 ) {
+							s = Float.toString(a);
+							if(s.length() > 3) {
+								a = Float.parseFloat(s.substring(0, s.length() - 3));
+								result.setText("" + (int)a);
+							}else {
+								a = 0;
+								result.setText("" + (int)a);
+							}
+							
+							
+						}
+						
+						if(i == 1 ) {
+							s = Float.toString(b);
+							if(s.length() > 3) {
+								b = Float.parseFloat(s.substring(0, s.length() - 3));
+								result.setText("" + (int)b);
+							}else {
+								b = 0;
+								result.setText("" + (int)b);
+							}
+						}
+						event.getSource();
+					}
+				});
+			}
+	
 	@Override
 	public void start(Stage stage) throws Exception {
 		stage.setTitle("Calculator");
@@ -104,184 +283,7 @@ public class Calculator extends Application{
 			buttonAction(j);
 		}
 		
-		
-		buttons[10].setOnAction(new EventHandler<ActionEvent>() {
-			
-			public void handle(ActionEvent event){
-					operation = 0;
-					a = (float) (a + c/Math.pow(10, counter));
-					i=1;
-					punto=0;
-					counter = 0;
-					event.getSource();
-			}
-		});
-		
-		buttons[11].setOnAction(new EventHandler<ActionEvent>() {
-			
-			public void handle(ActionEvent event){
-					operation = 1;
-					a = (float) (a + c/Math.pow(10, counter));
-					i=1;
-					punto=0;
-					counter = 0;
-					event.getSource();
-			}
-		});
-		
-		buttons[12].setOnAction(new EventHandler<ActionEvent>() {
-			
-			public void handle(ActionEvent event){
-					operation = 2;
-					a = (float) (a + c/Math.pow(10, counter));
-					i=1;
-					punto = 0;
-					counter = 0;
-					event.getSource();
-			}
-		});
-		
-		buttons[13].setOnAction(new EventHandler<ActionEvent>() {
-			
-			public void handle(ActionEvent event){
-					operation = 3;
-					a = (float) (a + c/Math.pow(10, counter));
-					i=1;
-					punto=0;
-					counter = 0;
-					event.getSource();
-			}
-		});
-		
-		buttons[14].setOnAction(new EventHandler<ActionEvent>() {
-			
-			public void handle(ActionEvent event){
-				b = (float) (b + d/Math.pow(10, counter));
-					if(operation == 0) {
-						res = a+b;
-						result.setText("" + res);
-						
-					}else if(operation == 1) {
-						res = a-b;
-						result.setText("" + res);
-						
-					}else if(operation == 2) {
-						res = a*b;
-						result.setText("" + res);
-						
-					}else if(operation == 3) {
-						res = a/b;
-						result.setText("" + res);
-					}
-				a=0;
-				i=0;
-				b=0;
-				c=0;
-				d=0;
-				res=0;
-				punto= 0 ;
-				counter = 0;
-				event.getSource();
-			}
-		});
-		
-		buttons[15].setOnAction(new EventHandler<ActionEvent>() {
-			
-			public void handle(ActionEvent event){
-					
-					punto = 1 ; 
-					
-					if(i == 0) 	result.setText("" + (int)a + ".");
-	
-					else if(i == 1) 	result.setText("" + (int)b + ".");
-					event.getSource();
-			}
-		});
-		
-		buttons[16].setOnAction(new EventHandler<ActionEvent>() {
-			
-			public void handle(ActionEvent event){
-					a = (float) (a + c/Math.pow(10, counter));
-					res = (float) Math.pow(a, 0.5);
-					result.setText("" + res);
-					a=0;
-					i=0;
-					b=0;
-					c=0;
-					d=0;
-					res=0;
-					punto= 0 ;
-					counter = 0;
-					event.getSource();
-			}
-		});
-		
-		
-	
-		
-		buttons[17].setOnAction(new EventHandler<ActionEvent>() {
-			
-			public void handle(ActionEvent event){
-					a = (float) (a + c/Math.pow(10, counter));
-					res = (float) Math.pow(a, 2);
-					result.setText("" + res);
-					a=0;
-					i=0;
-					b=0;
-					c=0;
-					d=0;
-					res=0;
-					punto= 0 ;
-					counter = 0;
-					event.getSource();
-			}
-		});
-		
-		buttons[18].setOnAction(new EventHandler<ActionEvent>() {
-			
-			public void handle(ActionEvent event){
-				if(i == 0) 	{
-					a=-a;
-					result.setText("" + a);
-				}else {
-					b=-b;
-					result.setText("" + b);
-				}
-				event.getSource();	
-			}
-		});
-		
-		buttons[19].setOnAction(new EventHandler<ActionEvent>() {
-			
-			public void handle(ActionEvent event){
-				String s;
-				if(i == 0 ) {
-					s = Float.toString(a);
-					if(s.length() > 3) {
-						a = Float.parseFloat(s.substring(0, s.length() - 3));
-						result.setText("" + (int)a);
-					}else {
-						a = 0;
-						result.setText("" + (int)a);
-					}
-					
-					
-				}
-				
-				if(i == 1 ) {
-					s = Float.toString(b);
-					if(s.length() > 3) {
-						b = Float.parseFloat(s.substring(0, s.length() - 3));
-						result.setText("" + (int)b);
-					}else {
-						b = 0;
-						result.setText("" + (int)b);
-					}
-				}
-				event.getSource();
-			}
-		});
-		
+		setOperation();
 		
 		
 		gride.add(buttons[18],  0 , 0);
