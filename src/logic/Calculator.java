@@ -31,7 +31,7 @@ public class Calculator extends Application{
 		launch(args);
 	}
 
-	public void buttonAction(Button button , int index){
+	public void buttonAction( int index){
 		
 		buttons[index].setOnAction(new EventHandler<ActionEvent>() {
 					
@@ -54,6 +54,7 @@ public class Calculator extends Application{
 									counter++;
 									result.setText("" + (int)b +  "." + (int)d);
 								}
+								event.getSource();
 							}
 				});
 		
@@ -100,7 +101,7 @@ public class Calculator extends Application{
 		
 		for(int j = 0 ; j<10 ; j++) {
 			
-			buttonAction(buttons[j], j);
+			buttonAction(j);
 		}
 		
 		
@@ -112,6 +113,7 @@ public class Calculator extends Application{
 					i=1;
 					punto=0;
 					counter = 0;
+					event.getSource();
 			}
 		});
 		
@@ -123,6 +125,7 @@ public class Calculator extends Application{
 					i=1;
 					punto=0;
 					counter = 0;
+					event.getSource();
 			}
 		});
 		
@@ -134,6 +137,7 @@ public class Calculator extends Application{
 					i=1;
 					punto = 0;
 					counter = 0;
+					event.getSource();
 			}
 		});
 		
@@ -145,6 +149,7 @@ public class Calculator extends Application{
 					i=1;
 					punto=0;
 					counter = 0;
+					event.getSource();
 			}
 		});
 		
@@ -156,18 +161,15 @@ public class Calculator extends Application{
 						res = a+b;
 						result.setText("" + res);
 						
-					}
-					if(operation == 1) {
+					}else if(operation == 1) {
 						res = a-b;
 						result.setText("" + res);
 						
-					}
-					if(operation == 2) {
+					}else if(operation == 2) {
 						res = a*b;
 						result.setText("" + res);
 						
-					}
-					if(operation == 3) {
+					}else if(operation == 3) {
 						res = a/b;
 						result.setText("" + res);
 					}
@@ -179,6 +181,7 @@ public class Calculator extends Application{
 				res=0;
 				punto= 0 ;
 				counter = 0;
+				event.getSource();
 			}
 		});
 		
@@ -190,7 +193,8 @@ public class Calculator extends Application{
 					
 					if(i == 0) 	result.setText("" + (int)a + ".");
 	
-					if(i == 1) 	result.setText("" + (int)b + ".");
+					else if(i == 1) 	result.setText("" + (int)b + ".");
+					event.getSource();
 			}
 		});
 		
@@ -208,8 +212,12 @@ public class Calculator extends Application{
 					res=0;
 					punto= 0 ;
 					counter = 0;
+					event.getSource();
 			}
 		});
+		
+		
+	
 		
 		buttons[17].setOnAction(new EventHandler<ActionEvent>() {
 			
@@ -225,6 +233,7 @@ public class Calculator extends Application{
 					res=0;
 					punto= 0 ;
 					counter = 0;
+					event.getSource();
 			}
 		});
 		
@@ -234,13 +243,11 @@ public class Calculator extends Application{
 				if(i == 0) 	{
 					a=-a;
 					result.setText("" + a);
-				}
-				
-				if(i == 1) 	{
+				}else {
 					b=-b;
 					result.setText("" + b);
 				}
-					
+				event.getSource();	
 			}
 		});
 		
@@ -271,6 +278,7 @@ public class Calculator extends Application{
 						result.setText("" + (int)b);
 					}
 				}
+				event.getSource();
 			}
 		});
 		
