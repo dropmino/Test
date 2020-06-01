@@ -1,0 +1,10 @@
+language: java
+jdk:
+    - openjdk8
+addons:
+    sonarcloud:
+        organization: "dropmino"
+        token: "ceb3df492ffafae5d964ce11cf12f758ee5edab5"
+script:
+    - ant build
+    - sonar-scanner
