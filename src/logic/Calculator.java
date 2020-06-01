@@ -60,86 +60,8 @@ public class Calculator extends Application{
 		
 	}
 	
-	public void setOperation() {
-		buttons[10].setOnAction(new EventHandler<ActionEvent>() {
-					
-					public void handle(ActionEvent event){
-							operation = 0;
-							a = (float) (a + c/Math.pow(10, counter));
-							i=1;
-							punto=0;
-							counter = 0;
-							event.getSource();
-					}
-				});
-				
-				buttons[11].setOnAction(new EventHandler<ActionEvent>() {
-					
-					public void handle(ActionEvent event){
-							operation = 1;
-							a = (float) (a + c/Math.pow(10, counter));
-							i=1;
-							punto=0;
-							counter = 0;
-							event.getSource();
-					}
-				});
-				
-				buttons[12].setOnAction(new EventHandler<ActionEvent>() {
-					
-					public void handle(ActionEvent event){
-							operation = 2;
-							a = (float) (a + c/Math.pow(10, counter));
-							i=1;
-							punto = 0;
-							counter = 0;
-							event.getSource();
-					}
-				});
-				
-				buttons[13].setOnAction(new EventHandler<ActionEvent>() {
-					
-					public void handle(ActionEvent event){
-							operation = 3;
-							a = (float) (a + c/Math.pow(10, counter));
-							i=1;
-							punto=0;
-							counter = 0;
-							event.getSource();
-					}
-				});
-				
-				buttons[14].setOnAction(new EventHandler<ActionEvent>() {
-					
-					public void handle(ActionEvent event){
-						b = (float) (b + d/Math.pow(10, counter));
-							if(operation == 0) {
-								res = a+b;
-								result.setText("" + res);
-								
-							}else if(operation == 1) {
-								res = a-b;
-								result.setText("" + res);
-								
-							}else if(operation == 2) {
-								res = a*b;
-								result.setText("" + res);
-								
-							}else if(operation == 3) {
-								res = a/b;
-								result.setText("" + res);
-							}
-						a=0;
-						i=0;
-						b=0;
-						c=0;
-						d=0;
-						res=0;
-						punto= 0 ;
-						counter = 0;
-						event.getSource();
-					}
-				});
+	public void setNewOperation() {
+		
 				
 				buttons[15].setOnAction(new EventHandler<ActionEvent>() {
 					
@@ -283,7 +205,87 @@ public class Calculator extends Application{
 			buttonAction(j);
 		}
 		
-		setOperation();
+		buttons[10].setOnAction(new EventHandler<ActionEvent>() {
+			
+			public void handle(ActionEvent event){
+					operation = 0;
+					a = (float) (a + c/Math.pow(10, counter));
+					i=1;
+					punto=0;
+					counter = 0;
+					event.getSource();
+			}
+		});
+		
+		buttons[11].setOnAction(new EventHandler<ActionEvent>() {
+			
+			public void handle(ActionEvent event){
+					operation = 1;
+					a = (float) (a + c/Math.pow(10, counter));
+					i=1;
+					punto=0;
+					counter = 0;
+					event.getSource();
+			}
+		});
+		
+		buttons[12].setOnAction(new EventHandler<ActionEvent>() {
+			
+			public void handle(ActionEvent event){
+					operation = 2;
+					a = (float) (a + c/Math.pow(10, counter));
+					i=1;
+					punto = 0;
+					counter = 0;
+					event.getSource();
+			}
+		});
+		
+		buttons[13].setOnAction(new EventHandler<ActionEvent>() {
+			
+			public void handle(ActionEvent event){
+					operation = 3;
+					a = (float) (a + c/Math.pow(10, counter));
+					i=1;
+					punto=0;
+					counter = 0;
+					event.getSource();
+			}
+		});
+		
+		buttons[14].setOnAction(new EventHandler<ActionEvent>() {
+			
+			public void handle(ActionEvent event){
+				b = (float) (b + d/Math.pow(10, counter));
+					if(operation == 0) {
+						res = a+b;
+						result.setText("" + res);
+						
+					}else if(operation == 1) {
+						res = a-b;
+						result.setText("" + res);
+						
+					}else if(operation == 2) {
+						res = a*b;
+						result.setText("" + res);
+						
+					}else if(operation == 3) {
+						res = a/b;
+						result.setText("" + res);
+					}
+				a=0;
+				i=0;
+				b=0;
+				c=0;
+				d=0;
+				res=0;
+				punto= 0 ;
+				counter = 0;
+				event.getSource();
+			}
+		});
+		
+		setNewOperation();
 		
 		
 		gride.add(buttons[18],  0 , 0);
