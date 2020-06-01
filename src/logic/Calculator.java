@@ -62,41 +62,6 @@ public class Calculator extends Application{
 	
 	public void setNewOperation() {
 		
-				
-				buttons[15].setOnAction(new EventHandler<ActionEvent>() {
-					
-					public void handle(ActionEvent event){
-							
-							punto = 1 ; 
-							
-							if(i == 0) 	result.setText("" + (int)a + ".");
-			
-							else if(i == 1) 	result.setText("" + (int)b + ".");
-							event.getSource();
-					}
-				});
-				
-				buttons[16].setOnAction(new EventHandler<ActionEvent>() {
-					
-					public void handle(ActionEvent event){
-							a = (float) (a + c/Math.pow(10, counter));
-							res = (float) Math.pow(a, 0.5);
-							result.setText("" + res);
-							a=0;
-							i=0;
-							b=0;
-							c=0;
-							d=0;
-							res=0;
-							punto= 0 ;
-							counter = 0;
-							event.getSource();
-					}
-				});
-				
-				
-			
-				
 				buttons[17].setOnAction(new EventHandler<ActionEvent>() {
 					
 					public void handle(ActionEvent event){
@@ -282,6 +247,38 @@ public class Calculator extends Application{
 				punto= 0 ;
 				counter = 0;
 				event.getSource();
+			}
+		});
+		
+
+		buttons[15].setOnAction(new EventHandler<ActionEvent>() {
+			
+			public void handle(ActionEvent event){
+					
+					punto = 1 ; 
+					
+					if(i == 0) 	result.setText("" + (int)a + ".");
+	
+					else if(i == 1) 	result.setText("" + (int)b + ".");
+					event.getSource();
+			}
+		});
+		
+		buttons[16].setOnAction(new EventHandler<ActionEvent>() {
+			
+			public void handle(ActionEvent event){
+					a = (float) (a + c/Math.pow(10, counter));
+					res = (float) Math.pow(a, 0.5);
+					result.setText("" + res);
+					a=0;
+					i=0;
+					b=0;
+					c=0;
+					d=0;
+					res=0;
+					punto= 0 ;
+					counter = 0;
+					event.getSource();
 			}
 		});
 		
